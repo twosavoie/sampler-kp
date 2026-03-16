@@ -86,6 +86,26 @@ h3 {
   width: 1px;
 }
 
+/* Source: https://dbushell.com/2026/02/20/visually-hidden/?utm_source=the-index&utm_medium=newsletter Alternate to above visually hidden */
+/* .visually-hidden { */
+/* shouldn't this be enough in 2026? */
+/* position: absolute; */
+/* take out of document flow */
+/* clip-path: circle(0); */
+/* reduce clickable area to nothing */
+/* } */
+
+/* .visually-hidden {
+  position: absolute;
+  transform: scale(0);
+} */
+
+/* .hide-accessibly {
+  position: absolute !important;
+  opacity: 0;
+  pointer-events: none;
+} */
+
 /* Source: Theme: https://www.youtube.com/watch?v=fyuao3G-2qg */
 .color-picker>fieldset {
   border: 0;
