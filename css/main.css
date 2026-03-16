@@ -1,3 +1,4 @@
+/* * Selector specificity: * value of (0, 0, 0, 0) - use for reset, html value of (0, 0, 0, 1), - use for global styles :root value of (0, 0, 1, 0) - use for CSS variables */
 *,
 *::after,
 *::before {
@@ -10,42 +11,37 @@
   /* * Respect user's color scheme preference. Use light-dark to implement */
   color-scheme: light dark;
   /* * End Global and reset styles */
-
-  /* * Background colors */
-  /* --bg-color-1: light-dark(#ffffff, #15122f); */
-  /* --my-gradient: linear-gradient(light-dark(#63bff005, hsl(248deg 45% 16%)), light-dark(#63bff040, hsl(240, 44%, 6%))); */
-
-  /* * Text colors */
-  /* --text-color: light-dark(#07124d, #f2e4e6);
-  --text-color-disabled: light-dark(#999999, #bbbbbb);
-  /* todo choose colors - the disabled ones look good? The chrome default is around #777777 */
-  /* --text-color-placeholder: light-dark(#999999, #bbbbbb); */
-  /* --text-color-reduced-opacity: light-dark(#07124d50, #f2e4e650); */
-
-  /* * Accent colors */
-  /* --accent-color-1: light-dark(#dc5a15, #f493a4);
-  --accent-color-2: light-dark(#f36500, #d7556c);
-  --accent-color-2-hover: light-dark(#ff6b00, #ed5e77);
-  --accent-color-3: light-dark(#09415e, #333); */
-  /* ? #484747 for dark accent instead of #333 */
-
-  /* * Borders */
-  /* --narrow-border: 1px solid;
-  --wide-border: 3px solid;
-  --border-radius: 5px; */
-
-  /* * Fonts */
-  /* --display-font-family: "Comfortaa", sans-serif; */
-  /* --body-font-family: "Quicksand", sans-serif; */
-  /* --body-font-family: "Mulish", sans-serif; */
-  --custom-font-family: sans-serif;
 }
 
 :root {
-  /* Source: Theme: https: //www.youtube.com/watch?v=fyuao3G-2qg */
-  --clr-body-bg: hsl(0 0% 90%);
-  --clr-text: hsl(0 0% 15%);
-  --clr-heading: hsl(0 0% 25%);
+  /* * Background colors */
+  --bg-color-1: #ffffff;
+  --bg-color-2: #ffffff;
+  --bg-color-3: #bce4f9;
+  --bg-color-4: #f2fafe;
+  --my-gradient: linear-gradient(#ffffff, #ebebeb);
+
+  /* * Text colors */
+  --text-color: #38322c;
+  --text-color-disabled: #999999;
+  --text-color-placeholder: #999999;
+  /* --text-color-reduced-opacity: light-dark(#07124d50, #f2e4e650); */
+
+  /* * Accent colors */
+  --accent-color-1: #dc5a15;
+  --accent-color-2: #f36500;
+  --accent-color-2-hover: #ff6b00;
+  --accent-color-3: #094;
+
+  /* * Borders */
+  --narrow-border: 1px solid;
+  --wide-border: 3px solid;
+  --border-radius: 5px;
+
+  /* * Fonts */
+  --display-font-family: "Comfortaa", sans-serif;
+  --body-font-family: "Mulish", sans-serif;
+  --custom-font-family: sans-serif;
 }
 
 html,
@@ -63,19 +59,11 @@ body {
   /* * bar is the default */
   caret-shape: bar;
   accent-color: var(--accent-color-1);
-  /* * Centers content in the viewport. Needs a height to center vertically */
-  /* * Without height it centers horizontally at the top of the viewport. With the gradient set, the effect is pretty. */
-  /* * Moved to container so that theme picker is at the top of the viewport and the rest of the content is centered on the viewport */
-  /* Source: centering content, caret color and shape: https://www.youtube.com/watch?v=oj9uVsdJ-8Q */
-  /* height: 100vh;
-  display: grid;
-  place-content: center; */
-  background: var(--clr-body-bg);
-  color: var(--clr-text);
+  background: var(--my-gradient);
+  color: var(--text-color);
 }
 
 .container {
-  /* Source: centering content, caret color and shape: https://www.youtube.com/watch?v=oj9uVsdJ-8Q */
   height: 100vh;
   display: grid;
   place-content: center;
@@ -124,77 +112,77 @@ h3 {
 }
 
 .color-picker input[type="radio"]#light {
-  --radio-color: gray;
+  --radio-color: #ebebeb;
 }
 
 .color-picker input[type="radio"]#pink {
-  --radio-color: pink;
+  --radio-color: hsl(310 50% 90%);
 }
 
 .color-picker input[type="radio"]#blue {
-  --radio-color: blue;
+  --radio-color: #63bff0;
 }
 
 .color-picker input[type="radio"]#green {
-  --radio-color: green;
+  --radio-color: #639858;
 }
 
 .color-picker input[type="radio"]#dark {
-  --radio-color: #232323;
+  --radio-color: hsl(248, 40%, 41%);
 }
 
 .pink {
-  --clr-body-bg: hsl(310 50% 90%);
-  --clr-card-bg: hsl(310 50% 100%);
-  --clr-text: hsl(310 50% 15%);
-  --clr-heading: hsl(310 50% 25%);
+  --my-gradient: linear-gradient(#fcf6fb, hsl(310 50% 90%));
+  --bg-color-2: hsl(310 50% 100%);
+  --text-color: hsl(310 50% 15%);
+  --clr-heading: hsl(310 50% 15%);
 }
 
 .blue {
-  --clr-body-bg: hsl(209 50% 90%);
-  --clr-card-bg: hsl(209 50% 100%);
-  --clr-text: hsl(209 50% 15%);
-  --clr-heading: hsl(209 50% 25%);
+  --my-gradient: linear-gradient(#bce4f9, #63bff040);
+  --bg-color-2: hsl(209 50% 100%);
+  --text-color: #07124d;
+  --clr-heading: #07124d;
 }
 
 .green {
-  --clr-body-bg: hsl(109 50% 90%);
-  --clr-card-bg: hsl(109 50% 100%);
-  --clr-text: hsl(109 50% 15%);
-  --clr-heading: hsl(109 50% 25%);
+  --my-gradient: linear-gradient(hsl(110, 27%, 96%), hsl(109 50% 90%));
+  --bg-color-2: hsl(109 50% 100%);
+  --text-color: hsl(111, 88%, 3%);
+  --clr-heading: hsl(111, 88%, 3%);
 }
 
 .dark {
-  --clr-body-bg: hsl(209 50% 10%);
-  --clr-card-bg: hsl(209 50% 5%);
-  --clr-text: hsl(209 50% 90%);
-  --clr-heading: hsl(209 50% 80%);
+  --my-gradient: linear-gradient(hsl(248, 47%, 54%), hsl(240, 44%, 6%));
+  --bg-color-2: hsl(209 50% 5%);
+  --text-color: #f2e4e6;
+  --clr-heading: #f2e4e6;
 }
 
 :root:has(#pink:checked) {
-  --clr-body-bg: hsl(310 50% 90%);
-  --clr-card-bg: hsl(310 50% 100%);
-  --clr-text: hsl(310 50% 15%);
-  --clr-heading: hsl(310 50% 25%);
+  --my-gradient: linear-gradient(#fcf6fb, hsl(310 50% 90%));
+  --bg-color-2: hsl(310 50% 100%);
+  --text-color: hsl(308, 50%, 3%);
+  --clr-heading: hsl(308, 50%, 3%);
 }
 
 :root:has(#blue:checked) {
-  --clr-body-bg: hsl(209 50% 90%);
-  --clr-card-bg: hsl(209 50% 100%);
-  --clr-text: hsl(209 50% 15%);
-  --clr-heading: hsl(209 50% 25%);
+  --my-gradient: linear-gradient(#bce4f9, #63bff040);
+  --bg-color-2: hsl(209 50% 100%);
+  --text-color: #07124d;
+  --clr-heading: #07124d;
 }
 
 :root:has(#green:checked) {
-  --clr-body-bg: hsl(109 50% 90%);
-  --clr-card-bg: hsl(109 50% 100%);
-  --clr-text: hsl(109 50% 15%);
-  --clr-heading: hsl(109 50% 25%);
+  --my-gradient: linear-gradient(hsl(110, 27%, 96%), hsl(109 50% 90%));
+  --bg-color-2: hsl(109 50% 100%);
+  --text-color: hsl(111, 88%, 3%);
+  --clr-heading: hsl(111, 88%, 3%);
 }
 
 :root:has(#dark:checked) {
-  --clr-body-bg: hsl(209 50% 10%);
-  --clr-card-bg: hsl(209 50% 5%);
-  --clr-text: hsl(209 50% 90%);
-  --clr-heading: hsl(209 50% 80%);
+  --my-gradient: linear-gradient(hsl(248, 47%, 54%), hsl(240, 44%, 6%));
+  --bg-color-2: hsl(209 50% 5%);
+  --text-color: #f2e4e6;
+  --clr-heading: #f2e4e6;
 }
